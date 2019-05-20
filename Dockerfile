@@ -61,9 +61,9 @@ VOLUME /var/lib/docker
 EXPOSE 2375
 EXPOSE 8443
 
-ENV MINIKUBE_VERSION=v0.25.0 \
-    K8S_VERSION=v1.8.0 \
-    KUBECTL_VERSION=v1.9.1 \
+ENV MINIKUBE_VERSION=v1.0.1 \
+    K8S_VERSION=v1.14.1 \
+    KUBECTL_VERSION=v1.14.1 \
     MINIKUBE_WANTUPDATENOTIFICATION=false \
     MINIKUBE_WANTREPORTERRORPROMPT=false \
     CHANGE_MINIKUBE_NONE_USER=true
@@ -92,4 +92,4 @@ RUN chmod a+rx /usr/local/bin/minikube && \
     (cd /root/.minikube && rm -rf $(ls | egrep -v '^cache'))
 
 # Start up docker and then pass any "docker run" args to minikube start
-ENTRYPOINT [ "/start.sh" ]
+# ENTRYPOINT [ "/start.sh" ]
